@@ -16,21 +16,23 @@ for (let i = 0; i < ROW_NUMBER; i++) {
 function hovereffect() {
     let button = document.getElementById(simulategravity(event.srcElement.id));
 
-    if (turn % 2 === 0) {
-        button.style.backgroundColor = "#FF0000";
-    }
-    else {
-        button.style.backgroundColor = "#FFFF00";
-    }
+    if (!button.disabled) {
+        if (turn % 2 === 0) {
+            button.style.backgroundColor = "#FF0000";
+        }
+        else {
+            button.style.backgroundColor = "#FFFF00";
+        }
 
-    button.style.opacity = "50%";
+        button.style.opacity = "50%";
+    }
 }
 
 function hovereffectclear() {
     let buttons = document.getElementsByClassName('game-button');
 
     for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].disabled === false) {
+        if (!buttons[i].disabled) {
             buttons[i].style.backgroundColor = "#1C1C1C";
             buttons[i].style.opacity = "100%";
         }
